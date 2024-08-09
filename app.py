@@ -22,7 +22,7 @@ def middle():
             service_content = request.form.get('service_content')
             service_dict = {"title": service_title, "content": service_content}
 
-            with open("/Users/shibayuusaku/Downloads/PersonaReviewApp/full_persona.jsonl", "r", encoding="utf-8") as f1:
+            with open("./full_persona.jsonl", "r", encoding="utf-8") as f1:
                 persona_dicts = [json.loads(l) for l in f1.readlines()]
                 job_ls = []
                 age_ls = []
@@ -52,7 +52,7 @@ def middle():
             service_title = service_dict["title"]
             service_content = service_dict["content"]
             service_dict = {"title": service_title, "content": service_content}
-            with open("/Users/shibayuusaku/Downloads/PersonaReviewApp/full_persona.jsonl", "r", encoding="utf-8") as f1:
+            with open("./full_persona.jsonl", "r", encoding="utf-8") as f1:
                 persona_dicts = [json.loads(l) for l in f1.readlines()]
                 job_ls = []
                 age_ls = []
@@ -85,7 +85,7 @@ def output():
         service_title = request.form.get('service_title')
         service_content = request.form.get('service_content')
 
-        with open("/Users/shibayuusaku/Downloads/PersonaReviewApp/full_persona.jsonl", "r", encoding="utf-8") as f1:
+        with open("./full_persona.jsonl", "r", encoding="utf-8") as f1:
             data_json_str = request.form.get('data').replace("'", '"')
             data_json = json.loads(data_json_str)
             job_ls = data_json["job"]

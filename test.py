@@ -1,13 +1,13 @@
 import json, random, time
 from generate_review import Persona
 
-with open('/Users/shibayuusaku/Downloads/PersonaReviewApp/full_persona.jsonl', 'r') as f:
+with open('./full_persona.jsonl', 'r') as f:
 
     
         persona_dicts = [json.loads(l) for l in f.readlines()]
         random.shuffle(persona_dicts)
         for i, dict in enumerate(persona_dicts[7:20]):
-            with open(f'/Users/shibayuusaku/Downloads/PersonaReviewApp/reviews_02/review0{i}.txt', 'w') as f2:
+            with open(f'./reviews_02/review0{i}.txt', 'w') as f2:
                 persona = Persona(dict)
                 title = "My Carで企業宣伝"
                 content = """

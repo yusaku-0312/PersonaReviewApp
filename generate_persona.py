@@ -19,8 +19,8 @@ def extract_json(text):
     else:
         return None
 
-persona_file_path = "/Users/shibayuusaku/Downloads/PersonaReviewApp/filtered_persona.jsonl"
-full_persona_file_path = "/Users/shibayuusaku/Downloads/PersonaReviewApp/full_persona.jsonl"
+persona_file_path = "./filtered_persona.jsonl"
+full_persona_file_path = "./full_persona.jsonl"
 
 with open(persona_file_path, "r", encoding='utf-8') as persona_file, open(full_persona_file_path, "a+", encoding='utf-8') as full_persona_file:
     persona_lines = [json.loads(l) for l in persona_file.readlines()]
@@ -78,32 +78,3 @@ with open(persona_file_path, "r", encoding='utf-8') as persona_file, open(full_p
                 break
 
 persona_file.close()
-
-"""
-# persona.jsonlの前処理用コード
-def contains_kanji(text):
-    # テキストに漢字が含まれているかどうかを判断する関数
-    return bool(re.search(r'[\u4e00-\u9fff]', text))
-
-count = 0
-
-with open("/Users/shibayuusaku/Downloads/PersonaReviewApp/persona.jsonl", "r", encoding='utf-8') as f1:
-    with open("/Users/shibayuusaku/Downloads/PersonaReviewApp/filtered_persona.jsonl", "w", encoding='utf-8') as f2:
-        for line in f1:
-            data = json.loads(line)
-            filtered_data = {}
-
-            for key, value in data.items():
-                if isinstance(value, str):
-                    if contains_kanji(value):
-                        count += 1
-                    else:
-                        filtered_data[key] = value
-                        if len(value.split(" ")) > 5:
-                            f2.write(json.dumps(filtered_data, ensure_ascii=False) + '\n')
-                        else:
-                            count += 1
-                else:
-                    count += 1
-print(count)
-"""

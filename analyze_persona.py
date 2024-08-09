@@ -3,7 +3,7 @@ import streamlit as st
 import json
 from functions_for_analysis import count_gender, count_age, calculate_analogy, plot_similarity_heatmap
 
-full_persona_file_path = "/Users/shibayuusaku/Downloads/PersonaReviewApp/full_persona.jsonl"
+full_persona_file_path = "./full_persona.jsonl"
 
 personas_dict = {
     "age": [],
