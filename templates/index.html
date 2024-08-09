@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d5feff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: left;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: black;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        ::placeholder {
+            color: #888;
+        }
+        .note {
+            color: #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+<form action= "{{ url_for('middle') }}" method="POST">
+    <div class="container">
+        <h1>Experience Simulation</h1>
+        <p>多様な仮想ペルソナが、あなたの製品やサービスを<br>体験＆レビュー生成</p>
+        <p>ここでは、商品名と商品詳細を入力して、レビューを生成できます。</p>
+        <input type="text" placeholder="商品名" name="service_title">
+    </div>
+    <div>
+        <textarea placeholder="商品詳細（機能、見た目、特徴など）" name="service_content"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="レビューを生成する">
+        <h3 class="note">※生成に多少の時間を要します。ご了承ください。</h3>
+    </div>
+</form>
+</body>
+</html>
